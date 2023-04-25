@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour
     public float speed = 0;
     public TextMeshProUGUI countText;
     public GameObject winTextObject;
+    public int totalPickups;
     private Rigidbody rb;
     private int count;
     private float movementX;
@@ -35,7 +36,7 @@ public class PlayerController : MonoBehaviour
     void SetCountText() 
     {
         countText.text = "Count: " + count.ToString();
-        if (count >= 12)
+        if (count >= totalPickups)
         {
             winTextObject.SetActive(true);
         }
